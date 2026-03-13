@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plan Trip | Sri Lanka Travel</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        
+        header.masthead-inner {
+            padding-top: 8rem;
+            padding-bottom: 4rem;
+            background: linear-gradient(to bottom, rgba(11, 94, 57, 0.8) 0%, rgba(11, 94, 57, 0.9) 100%),
+                        url('images/kandy.png');
+            background-position: center;
+            background-size: cover;
+        }
+        
+        .trip-card {
+            border-left: 4px solid var(--secondary-color);
+            transition: transform 0.2s;
+        }
+        .trip-card:hover {
+            transform: translateX(5px);
+        }
+        
+        #trip-summary-box {
+            background-color: var(--text-light);
+            border-top: 4px solid var(--primary-color);
+        }
+    </style>
+</head>
+<body>
+
+    
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <i class="fa-solid fa-leaf text-success me-2"></i>SriLanka<span class="text-success">Explore</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ms-auto py-4 py-lg-0">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="plantrip.html">Plan Trip</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    
+    <header class="masthead-inner text-center text-white">
+        <div class="container">
+            <h1 class="font-weight-bold">Plan Your Dream Trip</h1>
+            <p class="fs-5 mt-3">Organize your Sri Lankan itinerary with ease.</p>
+        </div>
+    </header>
+
+    
+    <section class="page-section">
+        <div class="container">
+            <div class="row">
+            
+                <div class="col-lg-5 mb-5 mb-lg-0">
+                    <div class="card shadow border-0 h-100">
+                        <div class="card-body p-4 p-md-5">
+                            <h3 class="mb-4 text-primary" style="color: var(--primary-color) !important;">Add Destination</h3>
+                            <form id="destinationForm" novalidate>
+                                <div class="mb-3">
+                                    <label for="destName" class="form-label fw-bold">Destination Name</label>
+                                    <select class="form-select" id="destName" required>
+                                        <option value="" disabled selected>Select a destination...</option>
+                                        <option value="Colombo">Colombo</option>
+                                        <option value="Kandy">Kandy</option>
+                                        <option value="Sigiriya">Sigiriya</option>
+                                        <option value="Ella">Ella</option>
+                                        <option value="Galle">Galle</option>
+                                        <option value="Yala National Park">Yala National Park</option>
+                                        <option value="Mirissa">Mirissa</option>
+                                        <option value="Nuwara Eliya">Nuwara Eliya</option>
+                                    </select>
+                                    <div class="invalid-feedback">Please select a destination.</div>
+                                </div>
+                                
+                                <div class="mb-3">
+                                    <label for="travelDate" class="form-label fw-bold">Travel Date</label>
+                                    <input type="date" class="form-control" id="travelDate" required>
+                                    <div class="invalid-feedback">Please select a valid date.</div>
+                                </div>
+                                
+                                <div class="mb-3">
+                                    <label for="numDays" class="form-label fw-bold">Number of Days</label>
+                                    <input type="number" class="form-control" id="numDays" min="1" max="30" placeholder="e.g. 3" required>
+                                    <div class="invalid-feedback">Please enter a valid number of days (1-30).</div>
+                                </div>
+                                
+                                <div class="mb-4">
+                                    <label for="travelNotes" class="form-label fw-bold">Notes / Activities</label>
+                                    <textarea class="form-control" id="travelNotes" rows="3" placeholder="What do you plan to do here?"></textarea>
+                                </div>
+                                
+                                <button type="submit" class="btn btn-success w-100 py-2 fw-bold" id="addDestinationBtn">
+                                    <i class="fa-solid fa-plus me-2"></i>Add to Itinerary
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                
+                <div class="col-lg-7">
+                    
+                    <div class="card shadow-sm border-0 mb-4" id="trip-summary-box">
+                        <div class="card-body p-4 d-flex justify-content-between align-items-center flex-wrap">
+                            <div>
+                                <h4 class="mb-1" style="color: var(--primary-color);">Trip Summary</h4>
+                                <p class="text-muted mb-0">Total Destinations: <span id="totalDestinations" class="fw-bold">0</span> | Total Days: <span id="totalDays" class="fw-bold">0</span></p>
+                            </div>
+                            <button id="clearItineraryBtn" class="btn btn-outline-danger mt-3 mt-md-0 d-none">
+                                <i class="fa-solid fa-trash me-2"></i>Clear All
+                            </button>
+                        </div>
+                    </div>
+
+            
+                    <div id="destinationList">
+                        
+                        <div class="text-center py-5 text-muted" id="emptyState">
+                            <i class="fa-solid fa-map-location-dot fs-1 mb-3 text-light-gray opacity-50"></i>
+                            <h5>Your itinerary is empty</h5>
+                            <p>Start adding destinations to build your dream Sri Lanka trip!</p>
+                        </div>
+                        
+                    
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+    <footer class="bg-dark text-white py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-4 mb-md-0">
+                    <h5 class="text-uppercase mb-4 text-success font-weight-bold">SriLankaExplore</h5>
+                    <p>Your ultimate companion for planning the perfect trip to the teardrop island. Explore, dream, discover.</p>
+                </div>
+                <div class="col-md-4 mb-4 mb-md-0 text-md-center">
+                    <h5 class="text-uppercase mb-4">Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html" class="text-white text-decoration-none footer-link">Home</a></li>
+                        <li><a href="plantrip.html" class="text-white text-decoration-none footer-link">Plan Trip</a></li>
+                        <li><a href="contact.html" class="text-white text-decoration-none footer-link">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4 text-md-end">
+                    <h5 class="text-uppercase mb-4">Follow Us</h5>
+                    <div class="social-icons">
+                        <a href="#" class="text-white me-3 fs-4"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="#" class="text-white me-3 fs-4"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" class="text-white me-3 fs-4"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="#" class="text-white fs-4"><i class="fa-brands fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <hr class="my-4 border-secondary">
+            <div class="row align-items-center">
+                <div class="col-md-6 text-center text-md-start">
+                    &copy; 2026 SriLankaExplore. All Rights Reserved.
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>

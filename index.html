@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sri Lanka Travel Itinerary Planner</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <i class="fa-solid fa-leaf text-success me-2"></i>SriLanka<span class="text-success">Explore</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ms-auto py-4 py-lg-0">
+                    <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="plantrip.html">Plan Trip</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    
+    <header class="masthead">
+        <div class="container h-100">
+            <div class="row h-100 align-items-center justify-content-center text-center">
+                <div class="col-lg-10 align-self-end">
+                    <h1 class="text-white font-weight-bold">Discover Sri Lanka</h1>
+                    <hr class="divider" />
+                </div>
+                <div class="col-lg-8 align-self-baseline">
+                    <p class="text-white-75 mb-5 fs-4">Experience the pearl of the Indian Ocean. From golden beaches to lush tea gardens, plan your perfect getaway today.</p>
+                    <a class="btn btn-success btn-xl rounded-pill" href="plantrip.html">Start Planning Now</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    
+    <section class="page-section bg-light" id="carousel-section">
+        <div class="container">
+            <h2 class="text-center mt-0 mb-4 section-heading">Glimpses of Paradise</h2>
+            <hr class="divider" />
+            
+            <div id="touristPlacesCarousel" class="carousel slide carousel-fade shadow-lg rounded overflow-hidden" data-bs-ride="carousel">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#touristPlacesCarousel" data-bs-slide-to="0" class="active"></button>
+                    <button type="button" data-bs-target="#touristPlacesCarousel" data-bs-slide-to="1"></button>
+                    <button type="button" data-bs-target="#touristPlacesCarousel" data-bs-slide-to="2"></button>
+                </div>
+                <div class="carousel-inner">
+                    <div class="carousel-item active" data-bs-interval="4000">
+                        <img src="images/kandy.png" class="d-block w-100 carousel-img" alt="Kandy Temple">
+                        <div class="carousel-caption d-none d-md-block glass-caption">
+                            <h5>Temple of the Sacred Tooth Relic</h5>
+                            <p>Explore the cultural capital of Sri Lanka.</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item" data-bs-interval="4000">
+                        <img src="images/ella.png" class="d-block w-100 carousel-img" alt="Ella Nine Arch">
+                        <div class="carousel-caption d-none d-md-block glass-caption">
+                            <h5>Ella & The Nine Arch Bridge</h5>
+                            <p>Breathtaking views and colonial railway architecture.</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item" data-bs-interval="4000">
+                        <img src="images/galle.png" class="d-block w-100 carousel-img" alt="Galle Fort">
+                        <div class="carousel-caption d-none d-md-block glass-caption">
+                            <h5>Galle Dutch Fort</h5>
+                            <p>Walk through history by the southern coast.</p>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#touristPlacesCarousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#touristPlacesCarousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    
+    <section class="page-section" id="destinations">
+        <div class="container">
+            <h2 class="text-center mt-0 mb-4 section-heading">Featured Destinations</h2>
+            <hr class="divider" />
+            <div class="row gx-4 gx-lg-5">
+                <div class="col-lg-3 col-md-6 text-center mb-4">
+                    <div class="card h-100 destination-card border-0 shadow-sm">
+                        <img src="images/hero.png" class="card-img-top" alt="Sigiriya">
+                        <div class="card-body">
+                            <h4 class="card-title">Sigiriya</h4>
+                            <p class="card-text text-muted">The ancient rock fortress and palace ruin surrounded by gardens.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 text-center mb-4">
+                    <div class="card h-100 destination-card border-0 shadow-sm">
+                        <img src="images/kandy.png" class="card-img-top" alt="Kandy">
+                        <div class="card-body">
+                            <h4 class="card-title">Kandy</h4>
+                            <p class="card-text text-muted">A large city in central Sri Lanka set on a plateau surrounded by mountains.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 text-center mb-4">
+                    <div class="card h-100 destination-card border-0 shadow-sm">
+                        <img src="images/ella.png" class="card-img-top" alt="Ella">
+                        <div class="card-body">
+                            <h4 class="card-title">Ella</h4>
+                            <p class="card-text text-muted">A small town in the Badulla District of Uva Province, situated at 1,041 metres.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 text-center mb-4">
+                    <div class="card h-100 destination-card border-0 shadow-sm">
+                        <img src="images/galle.png" class="card-img-top" alt="Galle">
+                        <div class="card-body">
+                            <h4 class="card-title">Galle</h4>
+                            <p class="card-text text-muted">A major city situated on the southwestern tip, famous for its grand Fort.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <footer class="bg-dark text-white py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-4 mb-md-0">
+                    <h5 class="text-uppercase mb-4 text-success font-weight-bold">SriLankaExplore</h5>
+                    <p>Your ultimate companion for planning the perfect trip to the teardrop island. Explore, dream, discover.</p>
+                </div>
+                <div class="col-md-4 mb-4 mb-md-0 text-md-center">
+                    <h5 class="text-uppercase mb-4">Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html" class="text-white text-decoration-none footer-link">Home</a></li>
+                        <li><a href="plantrip.html" class="text-white text-decoration-none footer-link">Plan Trip</a></li>
+                        <li><a href="contact.html" class="text-white text-decoration-none footer-link">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4 text-md-end">
+                    <h5 class="text-uppercase mb-4">Follow Us</h5>
+                    <div class="social-icons">
+                        <a href="#" class="text-white me-3 fs-4"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="#" class="text-white me-3 fs-4"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" class="text-white me-3 fs-4"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="#" class="text-white fs-4"><i class="fa-brands fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <hr class="my-4 border-secondary">
+            <div class="row align-items-center">
+                <div class="col-md-6 text-center text-md-start">
+                    &copy; 2026 SriLankaExplore. All Rights Reserved.
+                </div>
+                <div class="col-md-6 text-center text-md-end mt-3 mt-md-0 d-none d-md-block">
+                    <span class="text-muted small">Designed with ❤️ for Web Dev Project</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
